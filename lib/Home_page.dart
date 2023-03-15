@@ -1,8 +1,8 @@
-import 'package:flutter/cupertino.dart';
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:clay_containers/clay_containers.dart';
 
-class HomePage extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,6 +57,7 @@ class HomePage extends StatelessWidget {
               ReUsedWidget(iconType: Icons.device_thermostat,description: 'Thermostat'),
               ReUsedWidget(iconType: Icons.tv,description: 'Samsung TV'),
               TextButton(
+                onPressed: (){},
                 child: Container(
                   width: double.infinity,
                   height: 60,
@@ -81,8 +82,8 @@ class HomePage extends StatelessWidget {
 
 class ReUsedWidget extends StatelessWidget {
   ReUsedWidget({this.iconType,this.description});
-  final IconData iconType;
-  final String description;
+  final IconData? iconType;
+  final String? description;
   @override
   Widget build(BuildContext context) {
     return  ClayContainer(
@@ -106,7 +107,7 @@ class ReUsedWidget extends StatelessWidget {
                   width: 10,
                 ),
                 Text(
-                  description,
+                  description??'',
                   style: TextStyle(
                     fontSize: 15,
                   ),
